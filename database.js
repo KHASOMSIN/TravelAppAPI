@@ -1,15 +1,20 @@
-const mysql = require("mysql2"); // Ensure this line is present
+const mysql = require("mysql");
 
-// Create a connection pool
-const pool = mysql.createPool({
-  host: "sql110.infinityfree.com",
-  user: "if0_37130176",
-  password: "Kh23sk65k3",
-  database: "if0_37130176_TravelApp",
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
+// Create a connection to the database
+const connection = mysql.createConnection({
+  host: "sql12.freesqldatabase.com",
+  user: "sql12726739",
+  password: "q5dMZkAwCk",
+  database: "sql12726739",
 });
 
-// Export the pool with promise support
-module.exports = pool.promise();
+// Connect to the database
+connection.connect((err) => {
+  if (err) {
+    return console.error("error connecting: " + err.stack);
+  }
+  console.log("connected as id " + connection.threadId);
+});
+
+// Example query
+connection.query;
