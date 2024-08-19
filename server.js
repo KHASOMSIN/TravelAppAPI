@@ -1,5 +1,5 @@
 require("dotenv").config(); // Load environment variables
-
+const bcrypt = require("bcryptjs");
 const express = require("express");
 const bodyParser = require("body-parser");
 const userRegister = require("./Authentications/user_register");
@@ -11,7 +11,7 @@ const createProfiles = require("./user profiles/user_profile");
 const getUser = require("./user profiles/get_userprofile");
 const pool = require("./database");
 
-require("./Database/dbConnection"); // Database connection
+// require("./Database/dbConnection"); // Database connection
 
 const app = express();
 
