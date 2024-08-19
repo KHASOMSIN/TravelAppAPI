@@ -2,7 +2,7 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const nodemailer = require("nodemailer");
 const crypto = require("crypto");
-const db = require("../Database/dbConnection");
+const db = require("../database");
 const router = express.Router();
 const saltRounds = 10;
 

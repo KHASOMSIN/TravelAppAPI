@@ -1,7 +1,7 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 const crypto = require("crypto");
-const db = require("../Database/dbConnection");
+const db = require("../database");
 const router = express.Router();
 
 // Replace these with your actual email credentials
