@@ -1,20 +1,22 @@
+require("dotenv").config(); // Load environment variables
+
 const mysql = require("mysql");
 
 // Create a connection to the database
 const connection = mysql.createConnection({
-  host: "sql12.freesqldatabase.com",
-  user: "sql12726739",
-  password: "q5dMZkAwCk",
-  database: "sql12726739",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 // Connect to the database
 connection.connect((err) => {
   if (err) {
-    return console.error("error connecting: " + err.stack);
+    return console.error("Error connecting: " + err.stack);
   }
-  console.log("connected as id " + connection.threadId);
+  console.log("Connected as ID " + connection.threadId);
 });
 
-// Example query
-connection.query;
+// Close the connection
+connection.end();
